@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import axios from 'axios';
 
-import SearchBar from './components/search_bar';
+import SearchBar from './components/SearchBar';
 import StockList from './components/StockList';
 import './App.css';
 
