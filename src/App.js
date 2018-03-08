@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import axios from 'axios';
 
 import SearchBar from './components/search_bar';
@@ -38,8 +39,8 @@ class App extends Component {
 
     axios.get(axios.get(url)
     .then(res => {
-      let stocks = Array.from(res.data['Stock Quotes']).map((stock) => [{symbol: stock['1. symbol'], price: stock['2. price'], volume: stock['3. volume'], timestamp: stock['4. timestamp']}]);
-
+      let stocks = _.flattenDeep( Array.from(res.data['Stock Quotes']).map((stock) => [{symbol: stock['1. symbol'], price: stock['2. price'], volume: stock['3. volume'], timestamp: stock['4. timestamp']}]) );
+      console.log(stocks);
       this.setState((state, props) => {
         return {
           ...state,
@@ -54,13 +55,14 @@ class App extends Component {
   render () {
     let stocks = this.state.stocks;
     const value = this.state.value;
+
     return (
       <div className="App">
         <h1>Stock Search</h1>
         <SearchBar value={ value }
                    onChange={ this.handleChange }
                    onClick={ this.handleClick }/>
-        <StockList stockItems={ stocks }/>
+        <StockList stockItems={ this.state.stocks }/>
       </div>
     );
   }

@@ -1,19 +1,25 @@
 import React from 'react';
 import StockListItem from './StockListItem';
 
-const StockList = (stockItems, props) => {
+import _ from 'lodash';
+
+const StockList = (props) => {
 console.log(props);
 
-  // const stockItem = props.stocks.map(({stock}) => {
-  //   console.log(stock);
-  //     return (
-  //       <StockListItem />
-  //     );
-  // });
+  const stockItem = props.stockItems.map((stock) => {
+    console.log(stock);
+      return (
+        <StockListItem key={ stock.symbol }
+                       symbol={ stock.symbol }
+                       price={ stock.price }
+                       volume={ stock.volume }
+                       timestamp={ stock.timestamp } />
+      );
+  });
 
   return (
     <ul className="StockList">
-
+      { stockItem }
     </ul>
   )
 }
