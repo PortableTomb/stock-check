@@ -1,0 +1,30 @@
+.SearchBar {
+height: 50px;
+margin-top: 2.5rem;
+margin-bottom: 2.5rem;
+}
+
+.SearchBar__Input {
+  outline: none;
+  width: 50%;
+  height: 35px;
+}
+
+button.SearchBar__Button {
+  outline: none;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  self-align: stretch;
+  background-color: #333;
+  color: #fff;
+  max-width: 200px;
+  width: 25%;
+  height: 34px;
+}
+
+@media only screen and (min-width: 600px) {
+  .SearchBar__Input {
+   width: 65%;
+  }
+}

@@ -1,3 +1,16 @@
 .App {
+  width: 100vw;
+  height: 100vh;
   text-align: center;
+}
+
+.App__Title  {
+  letter-spacing: 2px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+@fontface {
+  font-family: 'Roboto', sans-serif;
+  src: url('https://fonts.googleapis.com/css?family=Roboto')
 }

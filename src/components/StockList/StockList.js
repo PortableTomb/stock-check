@@ -1,5 +1,7 @@
 import React from 'react';
-import StockListItem from './StockListItem';
+import StockListItem from '../StockListItem/StockListItem';
+import './StockList.css';
+
 
 const StockList = (props) => {
 

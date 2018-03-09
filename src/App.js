@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import axios from 'axios';
 
-import SearchBar from './components/SearchBar';
-import StockList from './components/StockList';
+import SearchBar from './components/SearchBar/SearchBar';
+import StockList from './components/StockList/StockList';
 import './App.css';
 
 class App extends Component {
@@ -58,7 +58,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1>Stock Search</h1>
+        <h1 className="App__Title">Stock Search</h1>
         <SearchBar value={ value }
                    onChange={ this.handleChange }
                    onClick={ this.handleClick }/>
