@@ -6,7 +6,7 @@ import './StockList.css';
 const StockList = (props) => {
 
   const stockItem = props.stockItems.map((stock) => {
-    console.log(typeof stock.price);
+    
       return (
         <StockListItem key={ stock.symbol }
                        symbol={ stock.symbol }

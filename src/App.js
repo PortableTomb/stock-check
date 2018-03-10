@@ -37,7 +37,7 @@ class App extends Component {
     const key = 'F41ON15LGCFM4PR7';
     const url = `https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbols=${term}&apikey=${key}`;
 
-    axios.get(axios.get(url)
+    axios.get(url)
     .then(res => {
       let stocks = _.flattenDeep( Array.from(res.data['Stock Quotes']).map((stock) => [{symbol: stock['1. symbol'], price: stock['2. price'], volume: stock['3. volume'], timestamp: stock['4. timestamp']}]) );
       console.log(stocks);
@@ -49,7 +49,6 @@ class App extends Component {
       })
     })
     .catch(error => console.log(error))
-    )
   }
 
   render () {
