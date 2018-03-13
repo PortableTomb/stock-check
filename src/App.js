@@ -39,6 +39,7 @@ class App extends Component {
 
     axios.get(url)
     .then(res => {
+      console.log(res.data);
       let stocks = _.flattenDeep( Array.from(res.data['Stock Quotes']).map((stock) => [{symbol: stock['1. symbol'], price: stock['2. price'], volume: stock['3. volume'], timestamp: stock['4. timestamp']}]) );
       console.log(stocks);
       this.setState((state, props) => {

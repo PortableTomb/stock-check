@@ -34,5 +34,6 @@
   font-weight: 500;
 }
 .StockListItem > * span{
-  font-weight: 300;
+  color: #757575;
+  font-weight: 400;
 }
